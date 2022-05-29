@@ -43,7 +43,7 @@
                         <a href="index.php?page=user" class="menu-name">Home</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-name">Change Information</a>
+                        <a href="index.php?page=changeinfor" class="menu-name">Change Information</a>
                     </li>
                     <li class="menu-item">
                         <a href="index.php?page=changepass" class="menu-name">Change-Pass</a>
@@ -80,12 +80,10 @@
         if ($page == 'changepass') {
             include_once("Changepass.html");
         }
-        if ($page == 'prodetail') {
-            include_once("Product_Details.php");
+        if ($page == 'changeinfor') {
+            include_once("ChangeInfor.html");
         }
-        if ($page == 'search') {
-            include_once("search.php");
-        }
+
     } else {
         include("login.html");
     }
