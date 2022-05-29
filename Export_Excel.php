@@ -193,3 +193,81 @@ if (isset($_POST['user_log'])) {
     $sql = "SELECT * FROM users_logs WHERE " . $_SESSION['searchQuery'] . " ORDER BY id DESC";
     header("location: admin.php?page=userlog&&func=filter&&sql=$sql");
 }
+//delete user logs
+if (isset($_POST['btn_delete'])) {
+    $searchQuery = " ";
+    $Start_date = " ";
+    $End_date = " ";
+    $Start_time = " ";
+    $End_time = " ";
+    $card_sel = " ";
+    $check = 0;
+    if ($_POST['date_sel_start'] != 0 && $_POST['date_sel_end'] != 0 || $_POST['time_sel_start'] != 0 && $_POST['time_sel_end'] != 0 || $_POST['card_sel'] != 0 || $_POST['dev_sel'] != 0) {
+        $check = 1;
+    }
+    //Start date filter
+    if ($_POST['date_sel_start'] != 0) {
+        $Start_date = $_POST['date_sel_start'];
+        $_SESSION['searchQuery'] = "checkindate='" . $Start_date . "'";
+    } else {
+        $Start_date = date("Y-m-d");
+        $_SESSION['searchQuery'] = "checkindate='" . date("Y-m-d") . "'";
+    }
+    //End date filter
+    if ($_POST['date_sel_end'] != 0) {
+        $End_date = $_POST['date_sel_end'];
+        $_SESSION['searchQuery'] = "checkindate BETWEEN '" . $Start_date . "' AND '" . $End_date . "'";
+    }
+    if (isset($_POST['time_sel'])) {
+        if ($_POST['time_sel'] == "Time_in") {
+            //Start time filter
+            if ($_POST['time_sel_start'] != 0 && $_POST['time_sel_end'] == 0) {
+                $Start_time = $_POST['time_sel_start'];
+                $_SESSION['searchQuery'] .= " AND timein='" . $Start_time . "'";
+            } elseif ($_POST['time_sel_start'] != 0 && $_POST['time_sel_end'] != 0) {
+                $Start_time = $_POST['time_sel_start'];
+            }
+            //End time filter
+            if ($_POST['time_sel_end'] != 0) {
+                $End_time = $_POST['time_sel_end'];
+                $_SESSION['searchQuery'] .= " AND timein BETWEEN '" . $Start_time . "' AND '" . $End_time . "'";
+            }
+        }
+        //Time-out filter
+        if ($_POST['time_sel'] == "Time_out") {
+            //Start time filter
+            if ($_POST['time_sel_start'] != 0 && $_POST['time_sel_end'] == 0) {
+                $Start_time = $_POST['time_sel_start'];
+                $_SESSION['searchQuery'] .= " AND timeout='" . $Start_time . "'";
+            } elseif ($_POST['time_sel_start'] != 0 && $_POST['time_sel_end'] != 0) {
+                $Start_time = $_POST['time_sel_start'];
+            }
+            //End time filter
+            if ($_POST['time_sel_end'] != 0) {
+                $End_time = $_POST['time_sel_end'];
+                $_SESSION['searchQuery'] .= " AND timeout BETWEEN '" . $Start_time . "' AND '" . $End_time . "'";
+            }
+        }
+    }
+    //Time-In filter
+
+    //Card filter
+    if ($_POST['card_sel'] != 0) {
+        $card_sel = $_POST['card_sel'];
+        $_SESSION['searchQuery'] .= " AND card_uid='" . $card_sel . "'";
+    }
+    //Department filter
+    if ($_POST['dev_sel'] != 0) {
+        $dev_uid = $_POST['dev_sel'];
+        $_SESSION['searchQuery'] .= " AND device_uid='" . $dev_uid . "'";
+    }
+    $sql = "DELETE FROM `users_logs`";
+    if (isset($_SESSION['searchQuery']) && $check == 1) {
+        $sql = "DELETE FROM `users_logs` WHERE " . $_SESSION['searchQuery'] . "";
+    } else {
+        $sql = "DELETE FROM `users_logs`";
+    }
+    mysqli_query($conn, $sql);
+    header("location: admin.php?page=userlog");
+    exit();
+}

@@ -201,6 +201,7 @@ include_once("connectDB.php");
             </div>
             <div class="filter-footer">
                 <div class="footer-btn">
+                    <button onclick="return confirm('Are you sure ?')" type="submit" class="btn-cancel" name="btn_delete" id="btn-delete">Delete</button>
                     <button type="submit" class="btn-filter" name="user_log" id="user_log">Filter</button>
                     <button type="reset" class="btn-cancel">Cancel</button>
                 </div>

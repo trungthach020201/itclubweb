@@ -46,6 +46,14 @@
                             <input value="<?php echo $row['card_uid']; ?>" type="number" id="card_id" name="cart_id" class="input-info" placeholder="CardID,....">
                             <p class="error" style="margin-bottom: 0;"></p>
                         </div>
+                        <div class="form-group">
+                            <input value="<?php echo $row['user_date']; ?>" type="date" id="dob" name="dob" class="input-info" placeholder="DoB,...." style="padding-left: 10px;">
+                            <p class="error" style="margin-bottom: 0;"></p>
+                        </div>
+                        <div class="form-group">
+                            <input value="<?php echo $row['github']; ?>" type="text" id="github" name="github" class="input-info" placeholder="Github,...." style="padding-left: 10px;">
+                            <p class="error" style="margin-bottom: 0;"></p>
+                        </div>
                     </div>
                     <div class="modal-sublabel">
                         <h4>Additional Info</h4>
@@ -145,6 +153,14 @@
                         </div>
                         <div class="form-group">
                             <input type="number" id="card_id" name="cart_id" class="input-info" placeholder="CardID,....">
+                            <p class="error" style="margin-bottom: 0;"></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="dob" name="dob" class="input-info" placeholder="DoB,...." style="padding-left: 10px;">
+                            <p class="error" style="margin-bottom: 0;"></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="github" name="github" class="input-info" placeholder="Github,...." style="padding-left: 10px;">
                             <p class="error" style="margin-bottom: 0;"></p>
                         </div>
                     </div>
@@ -266,7 +282,7 @@
     })
 </script>
 
-<script src="./js/validator.js"></script>
+<script src="./js/validator1.js"></script>
 <script>
     Validator({
         form: '#form-add',
@@ -292,10 +308,9 @@
             Validator.isRequired('#stid', 'this feild can not empty'),
             Validator.isRequired('#email', 'this feild can not empty'),
             Validator.isRequired('#card_id', 'this feild can not empty'),
+            Validator.isRequired('#dob', 'this feild can not empty'),
+            Validator.isRequired('#github', 'this feild can not empty'),
             Validator.isEmail('#email', 'Invalid email'),
         ],
-        // onSubmit: function(data) {
-        //     console.log(data)
-        // }
     });
 </script>
