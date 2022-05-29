@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManageEvent</title>
+
+    <!-- CSS link of file manage user and index -->
+    <link rel="stylesheet" href="./css/User/ManageUser.css">
+    <link rel="stylesheet" href="./css/User/index.css">
+</head>
+
+<body>
+
+    <div id="manage-container">
+        <p class="head-label">Manage Event</p>
+        <div class="detail-mn">
+
+            <!-- modal update -->
+            <div class="modal js-modal ">
+                <form class="modal-container js-modal-container ">
+                    <div class="modal-header">
+                        <div class="modal-label">
+                            <p>Update Event Infomation </p>
+                        </div>
+                        <div class="model-close js-modal-close">
+                            <i class=" icon-close">X</i>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Event Name">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Date">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Location">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Description">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="button">
+                            <input type="submit" class="modal-button" value="Update Event">
+                            <input style="background-color:rgb(197, 102, 68); color:#000;" type="submit" class="modal-button" value="Delete Event">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- finish modal -->
+
+            <!-- /model adduser -->
+            <div class="modaluser js-modal-user">
+                <form class="modal-container js-modal-container-user">
+                    <div class="modal-header">
+                        <div class="modal-label">
+                            <p> Add New Event </p>
+                        </div>
+                        <div class="model-close js-modal-close-user">
+                            <i class=" icon-close">X</i>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Event Name">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Date">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Location">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                        <div class="modal-input">
+                            <input type="text" class="input-info" placeholder="Description">
+                            <p class="error-ev">eeeor</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="button">
+                            <input type="submit" class="modal-button" value="Add New">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- finish modal user -->
+
+
+            <div class="detail-right">
+                <div class="btn-add">
+                    <button class="add-user js-add-user"> Add New Event</button>
+                </div>
+                <div class="table-1">
+                    <table class="table">
+                        <thead class="table-head">
+                            <tr class="tr-head">
+                                <th class="th-head">ID | Title</th>
+                                <th class="th-head">Date</th>
+                                <th class="th-head">Location</th>
+                                <th class="th-head">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <tr class="tr-body">
+                                <td class="td-body">
+                                    <a href="#" class="update-name js-update-name"> 1 | Meeting No.1 </a>
+                                </td>
+                                <td class="td-body">30/05/2022</td>
+                                <td class="td-body">F5.04</td>
+                                <td class="td-body">the new thing to discuss</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const editInfors = document.querySelectorAll('.js-update-name') //sellect the class use to use js
+        const modalclose = document.querySelector('.js-modal-close')
+        const modal = document.querySelector('.js-modal')
+        const modalcontainer = document.querySelector('.js-modal-container')
+
+        function showModal() {
+            modal.classList.add('open')
+        }
+
+        for (const editInfor of editInfors) {
+            editInfor.addEventListener('click', showModal)
+        }
+
+        function hideModal() {
+            modal.classList.remove('open')
+        }
+        modalclose.addEventListener('click', hideModal)
+
+        modal.addEventListener('click', hideModal)
+
+        modalcontainer.addEventListener('click', function (event) {
+            event.stopPropagation() //stop nổi bọt
+        })
+
+
+        const addUsers = document.querySelectorAll('.js-add-user') //sellect the class use to use js
+        const modalcloseUser = document.querySelector('.js-modal-close-user')
+        const modalUser = document.querySelector('.js-modal-user')
+        const modalcontainerUser = document.querySelector('.js-modal-container-user')
+
+        function showModalAdd() {
+            modalUser.classList.add('open')
+        }
+
+        for (const addUser of addUsers) {
+            addUser.addEventListener('click', showModalAdd)
+        }
+
+        function hideModalAdd() {
+            modalUser.classList.remove('open')
+        }
+        modalcloseUser.addEventListener('click', hideModalAdd)
+
+        modalUser.addEventListener('click', hideModalAdd)
+
+        modalcontainerUser.addEventListener('click', function (event) {
+            event.stopPropagation() //stop nổi bọt
+        })
+    </script>
+
+</body>
+
+</html>

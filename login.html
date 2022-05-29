@@ -1,0 +1,51 @@
+<body>
+    <!-- PHP -->
+    <!-- login form -->
+    <div id="page">
+        <div class="content">
+            <div class="left">
+                <div class="title" style="height: 25px;">
+                    <h1></h1>
+                </div>
+                <div class="title barrior" style="height:10%;">
+                    <p class="hide">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, placeat animi optio cum perspiciatis illo accusamus esse explicabo eligendi dignissimos dicta, dolore sed maiores. Maiores doloremque numquam sapiente saepe sit?</p>
+                </div>
+            </div>
+
+            <div class="right">
+                <form class="log-in" id="form1" name="form1" action="loginpro.php?function=login" method="POST">
+                    <h1 class="reflex">LOGIN</h1>
+                    <div class="form-group">
+                        <input class="form-input" type="text" placeholder="Email" id="txtEmail" name="txtEmail">
+                        <span class="error errors">This is display an error</span>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-input" type="password" placeholder="Password" id="txtPassword" name="txtPassword">
+                        <span class="error errors">This is display an error</span>
+                    </div>
+                    <button type="submit" name="btnLogin" class="btn-login" id="btnLogin">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/validator.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        Validator({
+            form: '#form1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.error',
+            rules: [
+                Validator.isRequired('#txtPassword', 'This field can not empty'),
+                Validator.isRequired('#txtEmail', 'This field can not empty'),
+                Validator.isEmail('#txtEmail', 'Invalid email'),
+                Validator.isPassword('#txtPassword', 6, 10, 'Password must be 6 to 10 characters'),
+            ],
+            // onSubmit: function(data) {
+            //     console.log(data)
+            // }
+            
+        });
+    </script>
+</body>

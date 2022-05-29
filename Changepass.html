@@ -1,0 +1,66 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Club</title>
+    <link rel="stylesheet" href="./css/User/changepass.css">
+    <link rel="stylesheet" href="./css/User/index.css">
+    <link rel="stylesheet" href="./css/User/ManageUser.css">
+    <link rel="stylesheet" href="./css/LogIn1.css">
+    <link rel="stylesheet" href="./css/User/user.css">
+    <link rel="stylesheet" href="./css/User/userlog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="shortcut icon" href="./image/download.jpg">
+</head>
+
+
+
+
+
+<div class="change-password">
+    <form action="ChangePassword.php?function=changepass" class="change-form" method="POST" name="formChangePass"
+        id="formChangePass">
+        <h1>Change Password</h1>
+        <div class="form-group">
+            <input class="form-input" type="password" placeholder="Old password" id="oldpass" name="oldpass">
+            <p class="error-pass"></p>
+        </div>
+
+        <div class="form-group">
+            <input class="form-input" type="password" placeholder="New password" id="newpassword" name="newpassword">
+            <p class="error-pass"></p>
+        </div>
+
+        <div class="form-group">
+            <input class="form-input" type="password" placeholder="Confirm password" id="confrimpassword"
+                name="confrimpassword">
+            <p class="error-pass"></p>
+        </div>
+
+        <button type="submit" class="btn-submit" name="btnChangePassword" id="btnChangePassword"  style="width:200px; background-color:rgb(209, 165, 20)">ChangePassword</button>
+    </form>
+</div>
+
+
+<script src="./js/validator.js"></script>
+<script>
+Validator({
+    form: '#formChangePass',
+    formGroupSelector: '.form-group',
+    errorSelector: '.error-pass',
+    rules: [
+        Validator.isRequired('#oldpass', 'This feild can not empty'),
+        Validator.isRequired('#newpassword', 'This feild can not empty'),
+        Validator.isRequired('#confrimpassword', 'This feild can not empty'),
+        Validator.isPassword('#oldpass', 6, 10, 'Password must be 6 to 10 characters'),
+        Validator.isPassword('#newpassword', 6, 10, 'Password must be 6 to 10 characters'),
+        Validator.isPassword('#confrimpassword', 6, 10, 'Password must be 6 to 10 characters'),
+        Validator.isConfirmed('#confrimpassword', function (){
+                    return document.querySelector('#formChangePass #newpassword').value;
+        },'Password not math')
+    ],
+    // onSubmit: function(data) {
+    //     console.log(data)
+    // }
+});
+</script>

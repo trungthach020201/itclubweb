@@ -1,0 +1,248 @@
+.log-container {
+    padding: 30px 0;
+    background-color: #0c5774;
+    min-height: 430px;
+}
+.log-header {
+    width: 60%;
+    margin: 0 calc(50% - 30%);
+    height: 100px;
+    margin-bottom: 20px;
+}
+.log-label {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+}
+.btn-export button{
+    width: 300px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    margin: 0 calc(50% - 150px);
+    margin-top: 15px;
+    background-color: rgb(154, 188, 219);
+}
+.btn-export button:hover {
+    background-color: burlywood;
+    color: #000;
+    cursor: pointer;
+}
+.table-log {
+    width: 80%;
+    margin: 0 calc(50% - 40%);
+}
+.table-log-head tr, th{
+    background-color: rgb(166, 194, 220);
+    color: #000;
+    padding: 10px;
+    text-align: center;
+}
+.table-log-body tr,td {
+    background-color: aliceblue;
+    color: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+/* model filter */
+.modal-filter {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+}
+.md-filter-container {
+    background-color: #0c5774;
+    width: 50%;
+    height: 40%;
+    margin: 50px auto;
+    border-radius: 7px;
+    animation: modalFadeIn ease 0.5s;
+
+}
+.filter-header {
+    background-color: #0c5774;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+.head-label {
+    font-size: 30px;
+    padding: 20px 0;
+    font-weight: 500;
+}
+.filter-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 16px;
+    font-style: normal;
+}
+.filter-close:hover {
+    background-color: red;
+    cursor: pointer;
+}
+.filter-body {
+    background-color: #fff;
+    padding: 16px;
+}
+.filter-body-cover {
+    display: flex;
+}
+.body-left {
+    border: 1px solid #ccc;
+    width: 47.5%;
+    background-color: antiquewhite;
+}
+.left-head {
+    background-color: #0c5774;
+    color: #fff;
+}
+.box-label {
+    padding: 10px;
+    font-size: 17px;
+}
+.left-right-body {
+    padding: 10px;
+}
+.left-right-body label {
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.left-right-body input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.body-right {
+    border: 1px solid #ccc;
+    width: 47.5%;
+    margin-left: 5% ;
+    background-color: antiquewhite;
+}
+.right-head {
+    background-color: #0c5774;
+    display: flex;
+    color: #fff;
+    font-size: 15px;
+    align-items: center;
+}
+.time-in {
+    background-color: aquamarine;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 27px;
+    /* width: 20%; */
+    padding: 0 5px;
+    margin: calc(6% - 13.5px);
+    /* margin-left: 10px; */
+}
+.time-in:hover {
+    background-color:  darksalmon;
+    cursor: pointer;
+}
+.time-out {
+    height: 27px;
+    width: 20%;
+    padding: 0 5px;
+    margin: calc(6% - 13.5px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.time-out:hover {
+    background-color:  darksalmon;
+    cursor: pointer;
+}
+
+.body-bottom {
+    display: flex;
+    background-color: antiquewhite;
+    margin-top: 15px;
+}
+
+.filter-1 {
+    padding: 1%;
+    width: 30%;
+}
+.filter-1 label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.filter-select {
+    width: 100%;
+    height: 30px;
+} 
+.filter-2 {
+    padding: 1%;
+    width: 30%;
+    margin-left: 3%;
+}
+.filter-2 label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.filter-2 button {
+    width: 70%;
+    float: right;
+    height: 30px;
+    background-color:burlywood;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.filter-2 button:hover {
+    background-color: darksalmon;
+    cursor: pointer;
+}
+.filter-footer {
+    background-color: #0c5774;
+    padding: 10px;
+}
+.footer-btn {
+    display: flex;
+    height: 35px;
+}
+.btn-filter {
+    margin-left: 34%;
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.btn-cancel {
+    width: 30%;
+    height: 100%;
+    margin-left: 5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.btn-cancel:hover, .btn-filter:hover {
+    cursor: pointer;
+    background-color:  darksalmon;
+}
+.open {
+    display: flex;
+}
+
+@keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-140px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
