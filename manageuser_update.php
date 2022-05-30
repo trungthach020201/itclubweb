@@ -66,7 +66,8 @@
                                 "<option value='Font-end'>Font-end</option>",
                                 "<option value='Back-end'>Back-end</option>",
                                 "<option value='Design'>Design</option>",
-                                "<option value='Media'>Media</option>"
+                                "<option value='Media'>Media</option>",
+                                "<option value='Network'>Network</option>"
                             ) ?>
                             <?php
                             $depart = $row['Department'];
@@ -76,30 +77,42 @@
                                     echo $department[1];
                                     echo $department[2];
                                     echo $department[3];
+                                    echo $department[4];
                                     break;
                                 case "Back-end":
                                     echo $department[1];
                                     echo $department[0];
                                     echo $department[2];
                                     echo $department[3];
+                                    echo $department[4];
                                     break;
                                 case "Design":
                                     echo $department[2];
                                     echo $department[1];
                                     echo $department[0];
                                     echo $department[3];
+                                    echo $department[4];
                                     break;
                                 case "Media":
                                     echo $department[3];
                                     echo $department[0];
                                     echo $department[2];
                                     echo $department[1];
+                                    echo $department[4];
+                                    break;
+                                case "Network":
+                                    echo $department[3];
+                                    echo $department[0];
+                                    echo $department[2];
+                                    echo $department[1];
+                                    echo $department[4];
                                     break;
                                 default:
                                     echo $department[3];
                                     echo $department[0];
                                     echo $department[2];
                                     echo $department[1];
+                                    echo $department[4];
                                     break;
                             }
                             ?>
@@ -255,8 +268,6 @@
     modalcontainer.addEventListener('click', function(event) {
         event.stopPropagation() //stop nổi bọt
     })
-
-
     const addUsers = document.querySelectorAll('.js-add-user') //sellect the class use to use js
     const modalcloseUser = document.querySelector('.js-modal-close-user')
     const modalUser = document.querySelector('.js-modal-user')
@@ -282,7 +293,7 @@
     })
 </script>
 
-<script src="./js/validator1.js"></script>
+<script src="./js/validator_all.js"></script>
 <script>
     Validator({
         form: '#form-add',

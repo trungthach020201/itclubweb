@@ -62,7 +62,7 @@
                 <a href="?page=managedevice" class="menu-name">Manage Devices</a>
             </li>
             <li class="menu-item">
-                <a href="#" class="menu-name">Manage Events</a>
+                <a href="?page=manageevent" class="menu-name">Manage Events</a>
             </li>
             <li class="menu-item">
                 <a href="?page=userlog" class="menu-name">User log</a>
@@ -108,6 +108,12 @@
         }
         if ($page == 'userlog') {
             include_once("UserLog.php");
+        }
+        if ($page == 'manageevent') {
+            include_once("ManageEvent.php");
+        }
+        if ($page == 'manageevent_update') {
+            include_once("ManageEvent_update.php");
         }
     } else {
         include("userlist.php");

@@ -51,6 +51,7 @@
                             <option value="Back-end">Back-end</option>
                             <option value="Design">Design</option>
                             <option value="Media">Media</option>
+                            <option value="Network">Network</option>
                         </select>
                     </div>
                     <label class="department-label">Gender:</label>
@@ -133,7 +134,7 @@
     })
 </script>
 
-<script src="./js/validator1.js"></script>
+<script src="./js/validator_all.js"></script>
 <script>
     Validator({
         form: '#form-add',
