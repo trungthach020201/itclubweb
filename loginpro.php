@@ -23,7 +23,7 @@ if (isset($_GET['function']) && $_GET['function'] == 'login') {
         $res = mysqli_query($conn, "SELECT * FROM admin WHERE admin_email='$email' AND admin_pwd='$pass'") or die(mysqli_error($conn));
         $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
         if (mysqli_num_rows($res) == 1) {
-            $_SESSION['Admin'] = $row["id"];
+            $_SESSION['Admin'] = $row["admin_email"];
             echo "<script> location.href='admin.php'</script>";
             exit;
         } else {

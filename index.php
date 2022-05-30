@@ -37,12 +37,13 @@
         if ($page != 'login') { ?>
             <!-- menu -->
             <ul class="menu-bar">
-                <div class="outline-mode">
-                    <p class="menu-mode">≡</p>
-                </div>
+                <div class="outline-mode"><p class="menu-mode">≡</p></div>
                 <div class="menu-control">
                     <li class="menu-item">
                         <a href="index.php?page=user" class="menu-name">Home</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="index.php?page=event" class="menu-name">Event</a>
                     </li>
                     <li class="menu-item">
                         <a href="index.php?page=changeinfor" class="menu-name">Change Information</a>
@@ -82,9 +83,13 @@
         if ($page == 'changepass') {
             include_once("Changepass.html");
         }
-        if ($page == 'changeinfor') {
-            include_once("ChangeInfor.php");
+        if ($page == 'event') {
+            include_once("Event.html");
         }
+        if ($page == 'changeinfor') {
+            include_once("ChangeInfor.html");
+        }
+
     } else {
         include("login.html");
     }
@@ -94,32 +99,32 @@
     <!-- footer -->
     <div id="footer">
         <div class="contact-infor">
-            <div class="about">
-                <h2 class="about-header"> Can Tho campus</h2>
-                <hr style="margin-bottom: 20px;">
-                <p class="ft-content">UNIVERSITY OF GREENWICH (VIET NAM)</p>
-                <p class="ft-content">160 30/4 street, An Phu ward, Ninh Kieu District - Cantho City</p>
-                <p class="ft-content">Tel: 0292.3512.369</p>
-                <p class="ft-content">Hotline: 0968.670.804 | 0936.600.861</p>
-            </div>
-            <div class="icon">
-                <i class="fa fa-solid fa-envelope" style="display: flex;">
-                    <span class="text1" style="margin-left: 5px;">
-                        <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=itclubofgwu@gmail.com&tf=1" class="ft-infor-linker">itclubofgwu@gmail.com</a>
-                    </span>
-                </i>
-                <i class="gm fa-brands fa-facebook" style="display: flex; padding-right: 5px;">
-                    <span class="text1" style="margin-left: 5px;">
-                        <a href="https://www.facebook.com/Greewich.ITClub.CanTho" class="ft-infor-linker">fb.com/Greewich.ITClub.CanTho</a>
-                    </span>
-                </i>
+             <div class="about">
+                 <h2 class="about-header"> Can Tho campus</h2>
+                 <hr style="margin-bottom: 20px;">
+                 <p class="ft-content">UNIVERSITY OF GREENWICH (VIET NAM)</p>
+                 <p class="ft-content">160 30/4 street, An Phu ward, Ninh Kieu District - Cantho City</p>
+                 <p class="ft-content">Tel: 0292.3512.369</p>
+                 <p class="ft-content">Hotline: 0968.670.804 | 0936.600.861</p>
+             </div>
+             <div class="icon">
+                 <i class="fa fa-solid fa-envelope face" style="display: flex;">
+                     <span class="text1" style="margin-left: 5px;">
+                         <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=itclubofgwu@gmail.com&tf=1" class="ft-infor-linker">itclubofgwu@gmail.com</a>
+                     </span>
+                 </i>
+                 <i class="gm fa-brands fa-facebook face" style="display: flex; padding-right: 5px;">
+                     <span class="text1" style="margin-left: 5px;">
+                         <a href="https://www.facebook.com/Greewich.ITClub.CanTho" class="ft-infor-linker">fb.com/Greewich.ITClub.CanTho</a>
+                     </span>
+                 </i>
             </div>
         </div>
         <div class="tag">
             <p>© Greenwich University | 2022 IT Club copyright</p>
         </div>
-    </div>
-    <script src="./assets/js/index.js"></script>
+   </div>
+   <script src="./assets/js/index.js"></script>
 
 </body>
 

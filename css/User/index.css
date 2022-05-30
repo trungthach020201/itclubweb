@@ -12,6 +12,7 @@ html {
     width: 100%;
     background-color: #0c5774;
     min-height: 430px;
+    padding-bottom: 30px;
 }
 .head-label {
     color: aliceblue;
@@ -32,13 +33,15 @@ html {
     background-color: aliceblue;
     color: #000;
     border: 1px solid #fff;
-    padding: 10px;
+    /* padding: 3px; */
+    font-size: 15px;
 }
 .table-body tr, td {
     background-color: rgb(166, 194, 220);
     color: #000;
-    padding: 10px;
+    /* padding: 5px; */
     text-align: center;
+    font-size: 13px;
 }
 .update-name {
     color: #000;
@@ -57,6 +60,7 @@ html {
 }
 .ft-infor-linker:hover{
     text-decoration: underline;
+    font-size: 20px;
 }
 .icon{
     padding-right: 50px;
@@ -145,7 +149,6 @@ html {
         margin-right: 10%;
         margin-top: 3%;
         padding-bottom: 3%;
-        font-size: 7px;
     }
     .head-label {
         color: aliceblue;
@@ -153,6 +156,22 @@ html {
         font-size: 20px;
         padding-top: 40px;
     }
+    .table-head td, th {
+        font-size:7px
+    }
+    .table-head tr, td {
+        font-size:5px
+    }
+    .head-label {
+        font-size:20px;
+    }
+    .ft-infor-linker{
+        font-size: 16px;
+    }
+    .face {
+        font-size:14px;
+    }
+
 }
 
 /* @media screen and (min-width: 901px){

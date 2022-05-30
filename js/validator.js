@@ -21,12 +21,10 @@ function Validator(options){
         }
         if(errorMessage){
             errorElement.innerText=errorMessage;
-            errorElement.classList.add('error','errors')
-            // getParent(inputElement,options.formGroupSelector).classList.add('error','errors')
+            getParent(inputElement,options.formGroupSelector).classList.add('invalid')
         }else{
             errorElement.innerText=''
-            // getParent(inputElement,options.formGroupSelector).classList.remove('error','errors')
-            errorElement.classList.remove('error','errors')
+            getParent(inputElement,options.formGroupSelector).classList.remove('invalid')
         }
         return !errorMessage
     }
@@ -72,8 +70,7 @@ function Validator(options){
                 inputElement.oninput=function (){
                     var errorElement=getParent(inputElement,options.formGroupSelector).querySelector(options.errorSelector)
                     errorElement.innerText=''
-                    // getParent(inputElement,options.formGroupSelector).classList.remove('invalid')
-                    errorElement.classList.remove('error','errors')
+                    getParent(inputElement,options.formGroupSelector).classList.remove('invalid')
                 }
             }
         });

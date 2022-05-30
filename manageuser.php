@@ -16,7 +16,7 @@
                 <div class="modal-body">
                     <div class="modal-input">
                         <div class="form-group">
-                            <input type="text" name="username" id="username" class="input-info" placeholder="UserName" style="padding-left: 10px;">
+                            <input type="text" name="username" id="username" class="input-info" placeholder="UserName"  style="padding-left: 10px;">
                             <p class="error" style="margin-bottom: 0; padding-left: 10px"></p>
                         </div>
                         <div class="form-group">
@@ -31,14 +31,6 @@
                             <input type="number" id="card_id" name="cart_id" class="input-info" placeholder="CardID,...." style="padding-left: 10px;">
                             <p class="error" style="margin-bottom: 0;"></p>
                         </div>
-                        <div class="form-group">
-                            <input type="date" id="dob" name="dob" class="input-info" placeholder="DoB,...." style="padding-left: 10px;">
-                            <p class="error" style="margin-bottom: 0;"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="github" name="github" class="input-info" placeholder="Github,...." style="padding-left: 10px;">
-                            <p class="error" style="margin-bottom: 0;"></p>
-                        </div>
                     </div>
                     <div class="modal-sublabel">
                         <h4>Additional Info</h4>
@@ -51,7 +43,6 @@
                             <option value="Back-end">Back-end</option>
                             <option value="Design">Design</option>
                             <option value="Media">Media</option>
-                            <option value="Network">Network</option>
                         </select>
                     </div>
                     <label class="department-label">Gender:</label>
@@ -134,7 +125,7 @@
     })
 </script>
 
-<script src="./js/validator_all.js"></script>
+<script src="./js/validator.js"></script>
 <script>
     Validator({
         form: '#form-add',
@@ -145,8 +136,10 @@
             Validator.isRequired('#stid', 'this feild can not empty'),
             Validator.isRequired('#email', 'this feild can not empty'),
             Validator.isRequired('#card_id', 'this feild can not empty'),
-            Validator.isRequired('#github', 'this feild can not empty'),
             Validator.isEmail('#email', 'Invalid email'),
         ],
+        // onSubmit: function(data) {
+        //     console.log(data)
+        // }
     });
 </script>

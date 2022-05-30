@@ -48,9 +48,7 @@
 
     <!-- menu -->
     <ul class="menu-bar">
-        <div class="outline-mode">
-            <p class="menu-mode">≡</p>
-        </div>
+        <div class="outline-mode"><p class="menu-mode">≡</p></div>
         <div class="menu-control">
             <li class="menu-item">
                 <a href="admin.php" class="menu-name">Home</a>
@@ -62,13 +60,13 @@
                 <a href="?page=managedevice" class="menu-name">Manage Devices</a>
             </li>
             <li class="menu-item">
-                <a href="?page=manageevent" class="menu-name">Manage Events</a>
+                <a href="#" class="menu-name">Manage Events</a>
             </li>
             <li class="menu-item">
                 <a href="?page=userlog" class="menu-name">User log</a>
             </li>
             <li class="menu-item">
-                <a href="?page=changepass" class="menu-name">Change Pass</a>
+                <a href="#" class="menu-name">Change Pass</a>
             </li>
             <li class="menu-item">
                 <a href="admin.php?page=logout" class="menu-name">Log-out</a>
@@ -80,7 +78,7 @@
     <div> </div>
     <?php
     session_start();
-    if (isset($_SESSION["Admin"]) == false) {
+    if (!isset($_SESSION["Admin"])) {
         header("location: index.php?page=login");
     }
     if (isset($_GET['page'])) {
@@ -109,12 +107,6 @@
         if ($page == 'userlog') {
             include_once("UserLog.php");
         }
-        if ($page == 'manageevent') {
-            include_once("ManageEvent.php");
-        }
-        if ($page == 'manageevent_update') {
-            include_once("ManageEvent_update.php");
-        }
     } else {
         include("userlist.php");
     }
@@ -123,32 +115,32 @@
     <!-- footer -->
     <div id="footer">
         <div class="contact-infor">
-            <div class="about">
-                <h2 class="about-header"> Can Tho campus</h2>
-                <hr style="margin-bottom: 20px;">
-                <p class="ft-content">UNIVERSITY OF GREENWICH (VIET NAM)</p>
-                <p class="ft-content">160 30/4 street, An Phu ward, Ninh Kieu District - Cantho City</p>
-                <p class="ft-content">Tel: 0292.3512.369</p>
-                <p class="ft-content">Hotline: 0968.670.804 | 0936.600.861</p>
-            </div>
-            <div class="icon">
-                <i class="fa fa-solid fa-envelope" style="display: flex;">
-                    <span class="text1" style="margin-left: 5px;">
-                        <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=itclubofgwu@gmail.com&tf=1" class="ft-infor-linker">itclubofgwu@gmail.com</a>
-                    </span>
-                </i>
-                <i class="gm fa-brands fa-facebook" style="display: flex; padding-right: 5px;">
-                    <span class="text1" style="margin-left: 5px;">
-                        <a href="https://www.facebook.com/Greewich.ITClub.CanTho" class="ft-infor-linker">fb.com/Greewich.ITClub.CanTho</a>
-                    </span>
-                </i>
+             <div class="about">
+                 <h2 class="about-header"> Can Tho campus</h2>
+                 <hr style="margin-bottom: 20px;">
+                 <p class="ft-content">UNIVERSITY OF GREENWICH (VIET NAM)</p>
+                 <p class="ft-content">160 30/4 street, An Phu ward, Ninh Kieu District - Cantho City</p>
+                 <p class="ft-content">Tel: 0292.3512.369</p>
+                 <p class="ft-content">Hotline: 0968.670.804 | 0936.600.861</p>
+             </div>
+             <div class="icon">
+                 <i class="fa fa-solid fa-envelope" style="display: flex;">
+                     <span class="text1" style="margin-left: 5px;">
+                         <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=itclubofgwu@gmail.com&tf=1" class="ft-infor-linker">itclubofgwu@gmail.com</a>
+                     </span>
+                 </i>
+                 <i class="gm fa-brands fa-facebook" style="display: flex; padding-right: 5px;">
+                     <span class="text1" style="margin-left: 5px;">
+                         <a href="https://www.facebook.com/Greewich.ITClub.CanTho" class="ft-infor-linker">fb.com/Greewich.ITClub.CanTho</a>
+                     </span>
+                 </i>
             </div>
         </div>
         <div class="tag">
             <p>© Greenwich University | 2022 IT Club copyright</p>
         </div>
-    </div>
-    <script src="./assets/js/index.js"></script>
+   </div>
+   <script src="./assets/js/index.js"></script>
 </body>
 
 </html>

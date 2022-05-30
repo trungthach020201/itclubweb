@@ -38,12 +38,12 @@ html {
     border-radius: 7px;
 }
 .btn-submit {
-    height: 35px;
+    height: 40px;
     margin-top: 20px;
     margin-bottom: 30px;
     background-color: rgb(186, 158, 121);
     border: 1px solid #ccc;
-    width: 50px;
+    width: 80%;
     border-radius: 7px;
     cursor: pointer;
 }
@@ -61,10 +61,7 @@ html {
         height: 35px;
         width: 50px;
     }
-    .change-password {
-        width: 50%;
-        height: 100%;
-    }
+
 }
 
 /* change information */

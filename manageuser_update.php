@@ -46,14 +46,6 @@
                             <input value="<?php echo $row['card_uid']; ?>" type="number" id="card_id" name="cart_id" class="input-info" placeholder="CardID,....">
                             <p class="error" style="margin-bottom: 0;"></p>
                         </div>
-                        <div class="form-group">
-                            <input value="<?php echo $row['user_date']; ?>" type="date" id="dob" name="dob" class="input-info" placeholder="DoB,...." style="padding-left: 10px;">
-                            <p class="error" style="margin-bottom: 0;"></p>
-                        </div>
-                        <div class="form-group">
-                            <input value="<?php echo $row['github']; ?>" type="text" id="github" name="github" class="input-info" placeholder="Github,...." style="padding-left: 10px;">
-                            <p class="error" style="margin-bottom: 0;"></p>
-                        </div>
                     </div>
                     <div class="modal-sublabel">
                         <h4>Additional Info</h4>
@@ -66,8 +58,7 @@
                                 "<option value='Font-end'>Font-end</option>",
                                 "<option value='Back-end'>Back-end</option>",
                                 "<option value='Design'>Design</option>",
-                                "<option value='Media'>Media</option>",
-                                "<option value='Network'>Network</option>"
+                                "<option value='Media'>Media</option>"
                             ) ?>
                             <?php
                             $depart = $row['Department'];
@@ -77,42 +68,30 @@
                                     echo $department[1];
                                     echo $department[2];
                                     echo $department[3];
-                                    echo $department[4];
                                     break;
                                 case "Back-end":
                                     echo $department[1];
                                     echo $department[0];
                                     echo $department[2];
                                     echo $department[3];
-                                    echo $department[4];
                                     break;
                                 case "Design":
                                     echo $department[2];
                                     echo $department[1];
                                     echo $department[0];
                                     echo $department[3];
-                                    echo $department[4];
                                     break;
                                 case "Media":
                                     echo $department[3];
                                     echo $department[0];
                                     echo $department[2];
                                     echo $department[1];
-                                    echo $department[4];
-                                    break;
-                                case "Network":
-                                    echo $department[3];
-                                    echo $department[0];
-                                    echo $department[2];
-                                    echo $department[1];
-                                    echo $department[4];
                                     break;
                                 default:
                                     echo $department[3];
                                     echo $department[0];
                                     echo $department[2];
                                     echo $department[1];
-                                    echo $department[4];
                                     break;
                             }
                             ?>
@@ -166,14 +145,6 @@
                         </div>
                         <div class="form-group">
                             <input type="number" id="card_id" name="cart_id" class="input-info" placeholder="CardID,....">
-                            <p class="error" style="margin-bottom: 0;"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" id="dob" name="dob" class="input-info" placeholder="DoB,...." style="padding-left: 10px;">
-                            <p class="error" style="margin-bottom: 0;"></p>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="github" name="github" class="input-info" placeholder="Github,...." style="padding-left: 10px;">
                             <p class="error" style="margin-bottom: 0;"></p>
                         </div>
                     </div>
@@ -268,6 +239,8 @@
     modalcontainer.addEventListener('click', function(event) {
         event.stopPropagation() //stop nổi bọt
     })
+
+
     const addUsers = document.querySelectorAll('.js-add-user') //sellect the class use to use js
     const modalcloseUser = document.querySelector('.js-modal-close-user')
     const modalUser = document.querySelector('.js-modal-user')
@@ -293,7 +266,7 @@
     })
 </script>
 
-<script src="./js/validator_all.js"></script>
+<script src="./js/validator.js"></script>
 <script>
     Validator({
         form: '#form-add',
@@ -319,9 +292,10 @@
             Validator.isRequired('#stid', 'this feild can not empty'),
             Validator.isRequired('#email', 'this feild can not empty'),
             Validator.isRequired('#card_id', 'this feild can not empty'),
-            Validator.isRequired('#dob', 'this feild can not empty'),
-            Validator.isRequired('#github', 'this feild can not empty'),
             Validator.isEmail('#email', 'Invalid email'),
         ],
+        // onSubmit: function(data) {
+        //     console.log(data)
+        // }
     });
 </script>

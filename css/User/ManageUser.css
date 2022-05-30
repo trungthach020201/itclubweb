@@ -6,6 +6,7 @@ html {
     width: 100%;
     background-color: #0c5774;
     min-height: 430px;
+    padding-bottom: 30px;
 }
 /* modal */
 .modaluser {
@@ -30,7 +31,6 @@ html {
     justify-content: center;
     display: none;
   }
-
 .modal-container {
     background-color: #fff;
     width: 45%;
@@ -130,9 +130,9 @@ html {
 .add-user {
     width: 70%;
     height: 100%;
-    border-radius: 7px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 15px;
+    /* font-size: 15px; */
 }
 .add-user:hover {
     background-color: bisque;
@@ -143,7 +143,7 @@ html {
 .head-label {
     color: aliceblue;
     text-align: center;
-    font-size: 45px;
+    /* font-size: 45px; */
     padding-top: 40px;
 }
 /* .table {
@@ -191,6 +191,18 @@ html {
   }
   .open {
     display: flex;
+  }
+  @media screen and (max-width: 900px) { 
+
+    .add-user {
+        width: 50px;
+        height: 15px;
+        font-size: 9px;
+    }
+
+    .de-table  {
+     font-size: 5px;   
+    }
   }
 
 
